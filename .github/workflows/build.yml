@@ -48,5 +48,5 @@ jobs:
     
       - name: Upload artifact to JFrog
         run: |
-          jfrog rt u target/*.jar javamicroservice/${{ matrix.microservice }}/
+          jfrog rt u ${{ matrix.microservice }}/target/*.jar javamicroservice/${{ matrix.microservice }}/
         

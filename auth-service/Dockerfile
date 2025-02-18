@@ -15,4 +15,4 @@ WORKDIR /home/app
 COPY --from=build /app/target/auth-service-*.jar /app/app.jar
 
 CMD ["java", "-jar", "/app/app.jar"]
-#just adding a comment to 
+#just adding a comment 
