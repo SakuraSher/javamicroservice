@@ -40,7 +40,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build and analyze
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
           SONAR_PROJECT_KEY: SakuraSher_javamicroservice
       
         run: |
