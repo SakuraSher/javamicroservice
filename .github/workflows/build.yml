@@ -55,5 +55,5 @@ jobs:
       - name: Upload artifact to JFrog
         run: |
           ls  ${{ matrix.microservice }}/target
-          jfrog rt u "${{ matrix.microservice }}/target/*.jar" "javamicroservice/" --url="https://trialmx0g3h.jfrog.io/" --access-token="${{ secrets.ARTIFACTORY_ACCESS_TOKEN }}"
+          jfrog rt u "${{ matrix.microservice }}/target/*.jar" "javamicroservice/" --url="https://trialmx0g3h.jfrog.io/artifactory/" --access-token="${{ secrets.ARTIFACTORY_ACCESS_TOKEN }}"
         
