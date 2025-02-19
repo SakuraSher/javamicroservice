@@ -31,5 +31,6 @@ jobs:
       - name: Push to Docker Hub
         run: | 
            cd ${{ matrix.microservice }}
-           docker build -t "${{ secrets.DOCKER_USERNAME }}/${{ matrix.microservice }}" -f Dockerfile .
+           docker build -t ${{ matrix.microservice }}" -f Dockerfile .
+           docker tag ${{ matrix.microservice }} ${{ secrets.DOCKER_USERNAME }}/${{ matrix.microservice }}:latest
            docker push ${{ secrets.DOCKER_USERNAME }}/${{ matrix.microservice }}:latest
