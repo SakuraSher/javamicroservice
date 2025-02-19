@@ -45,6 +45,11 @@ jobs:
           JF_URL: https://trial1dnxmv.jfrog.io
           JF_ACCESS_TOKEN: ${{ secrets.JFROG }}
           JF_REPO: javamicroservice
+     
+        # checking the path to microservice
+      - name: files
+        run: |
+            ls
           
         # checking the path to microservice
       - name: Upload artifact to JFrog
