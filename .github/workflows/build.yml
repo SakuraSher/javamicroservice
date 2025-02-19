@@ -44,6 +44,7 @@ jobs:
         env: 
           JF_URL: https://trial1dnxmv.jfrog.io
           JF_ACCESS_TOKEN: ${{ secrets.JFROG }}
+          JF_REPO: javamicroservice
           
     
       - name: Upload artifact to JFrog
