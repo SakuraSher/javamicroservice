@@ -41,7 +41,8 @@ jobs:
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_PROJECT_KEY: javamicroservice-${{ matrix.microservice }}
+          SONAR_PROJECT_KEY: SakuraSher_javamicroservice
+      
         run: |
          cd ${{ matrix.microservice }}
          mvn -B  verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=SONAR_PROJECT_KEY  -Dmaven.test.failure.ignore=true
