@@ -44,4 +44,4 @@ jobs:
           SONAR_PROJECT_KEY: javamicroservice-${{ matrix.microservice }}
         run: |
          cd ${{ matrix.microservice }}
-         mvn -B  verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=SONAR_PROJECT_KEY -Dskiptests
+         mvn -B  verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=SONAR_PROJECT_KEY  -Dmaven.test.failure.ignore=true
