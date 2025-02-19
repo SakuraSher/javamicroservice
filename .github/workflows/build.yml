@@ -42,7 +42,7 @@ jobs:
         with:
                 version: latest
         env: 
-          JF_URL: https://trial1dnxmv.jfrog.io
+          JF_URL: https://trialmx0g3h.jfrog.io/
           JF_ACCESS_TOKEN: "${{ secrets.ARTIFACTORY_ACCESS_TOKEN }}"
           JF_REPO: javamicroservice
      
@@ -55,5 +55,5 @@ jobs:
       - name: Upload artifact to JFrog
         run: |
           ls  ${{ matrix.microservice }}/target
-          jfrog rt u "${{ matrix.microservice }}/target/*.jar" "javamicroservice/" --url="https://trial1dnxmv.jfrog.io" --access-token="${{ secrets.ARTIFACTORY_ACCESS_TOKEN }}"
+          jfrog rt u "${{ matrix.microservice }}/target/*.jar" "javamicroservice/" --url="https://trialmx0g3h.jfrog.io/" --access-token="${{ secrets.ARTIFACTORY_ACCESS_TOKEN }}"
         
