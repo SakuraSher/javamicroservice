@@ -35,4 +35,4 @@ jobs:
     
       - name: Push to Docker Hub
         run: | 
-           docker push sakurasher/${{ matrix.microservice }}:latest
+           docker push ${{ secrets.DOCKER_USERNAME }}/${{ matrix.microservice }}:latest
