@@ -23,7 +23,7 @@ jobs:
         run: |
           cd ${{ matrix.microservice }}
           docker build -t ${{ matrix.microservice }} .
-          docker tag ${{ matrix.microservice }}:latest sakurasher/${{ matrix.microservice }}:latest
+          docker tag ${{ matrix.microservice }} ${{ secrets.DOCKER_USERNAME }}/${{ matrix.microservice }}:latest
 
       
       - name: Login to Docker Hub
