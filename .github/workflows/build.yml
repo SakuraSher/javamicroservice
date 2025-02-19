@@ -49,6 +49,6 @@ jobs:
         # checking the path to microservice
       - name: Upload artifact to JFrog
         run: |
-          ls -l ${{ matrix.microservice }}/
+          ls  ${{ matrix.microservice }}/
           jfrog rt u "${{ matrix.microservice }}/target/*.jar" "javamicroservice/" --url=$JF_URL --access-token=$JF_ACCESS_TOKEN
         
