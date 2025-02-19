@@ -3,9 +3,9 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'auth-service/**'
-      - 'config-server/**'
+    # paths:
+    #   - 'auth-service/**'
+    #   - 'config-server/**'
 #   pull_request:
 #     types: [opened, synchronize, reopened]
 jobs:
@@ -41,5 +41,7 @@ jobs:
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        working-directory: ${{ matrix.microservice }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=SakuraSher_javamicroservice
+          SONAR_PROJECT_KEY: javamicroservice-${{ matrix.microservice }}
+        run: |
+         cd ${{ matrix.microservice }}
+         mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=SONAR_PROJECT_KEY
