@@ -32,5 +32,5 @@ jobs:
         run: | 
            cd ${{ matrix.microservice }}
            docker build -t ${{ matrix.microservice }} -f Dockerfile .
-           docker tag ${{ matrix.microservice }} ${{ secrets.DOCKER_USERNAME }}/${{ matrix.microservice }}:latest
-           docker push ${{ secrets.DOCKER_USERNAME }}/${{ matrix.microservice }}:latest
+           docker tag ${{ matrix.microservice }} ${{ secrets.DOCKER_USERNAME }}/${{ matrix.microservice }}
+           docker push ${{ secrets.DOCKER_USERNAME }}/${{ matrix.microservice }}
