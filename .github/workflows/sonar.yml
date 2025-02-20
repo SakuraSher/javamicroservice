@@ -41,7 +41,7 @@ jobs:
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONARTOKEN }} 
-          SONAR_PROJECT_KEY: javamicroservice
+          SONAR_PROJECT_KEY: javamicroservice-${{ matrix.microservice }}
           GIT_TOKEN: ${{secrets.GIT_TOKEN}}
       
         run: |
