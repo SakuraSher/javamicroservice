@@ -30,7 +30,7 @@ jobs:
     
       - name: Push to Docker Hub
         run: | 
-           cd ${{ matrix.microservice }}
-           docker buildx build --tag ${{ secrets.DOCKER_USERNAME }}/${{ matrix.microservice }}:{{github.sha}} -f Dockerfile .
+          cd ${{ matrix.microservice }}
+          docker buildx build  --no-cache --tag ${{ secrets.DOCKER_USERNAME }}/${{ matrix.microservice }}:{{github.sha}} -f Dockerfile .
           
-           docker push ${{ secrets.DOCKER_USERNAME }}/${{ matrix.microservice }}:{{github.sha}}
+          docker push ${{ secrets.DOCKER_USERNAME }}/${{ matrix.microservice }}:{{github.sha}}
