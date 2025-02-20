@@ -32,6 +32,5 @@ jobs:
         run: | 
            cd ${{ matrix.microservice }}
            docker build --tag ${{ secrets.DOCKER_USERNAME }}/${{ matrix.microservice }}:latest -f Dockerfile .
-           echo   ${{ matrix.microservice }}  "--" "sakurasherlocked/"${{ matrix.microservice }}
-           
-           docker push ${{ secrets.DOCKER_USERNAME }}/${{ matrix.microservice }}
+          
+           docker push ${{ secrets.DOCKER_USERNAME }}/${{ matrix.microservice }}:latest
